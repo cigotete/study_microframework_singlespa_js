@@ -4,17 +4,17 @@ const app = {
 
   // método opcional para inicializar la aplicación
   async bootstrap(props){
-    console.log("Inico de la app");
+    console.log("Inico de la app", props);
   },
 
   // método obligatorio para montar la aplicación
   async mount(props) {
-    console.log("App-montada:");
+    console.log("App-montada:", props);
   },
 
   // método obligatorio para desmontar la aplicación
   async unmount(props) {
-    console.log("App-desmontado");
+    console.log("App-desmontado", props);
   }
 };
 
