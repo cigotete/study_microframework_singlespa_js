@@ -1,16 +1,14 @@
-import { registerApplication, start } from "single-spa";
-
-const app = {
+window.appJavascript = {
 
   // método opcional para inicializar la aplicación
   async bootstrap(props){
-    console.log("Inico de la app", props);
+    console.log("Inicio de la app js", props);
   },
 
   // método obligatorio para montar la aplicación
   async mount(props) {
     console.log("App-montada:", props);
-    const contenedor = document.getElementById("app");
+    const contenedor = document.getElementById("app-mf-javascript");
     const boton = document.createElement("button");
     boton.textContent = `Guardar ${props.nombre}`;
     contenedor.appendChild(boton);
@@ -23,15 +21,3 @@ const app = {
     contenedor.innerHTML = "";
   }
 };
-
-registerApplication({
-  name: "app-mf-javascript",
-  app,
-  activeWhen: ["/"],
-  customProps: {
-    codigo: "001",
-    nombre: "Botón Javascript"
-  }
-});
-
-start();
