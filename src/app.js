@@ -19,6 +19,8 @@ const app = {
   // método obligatorio para desmontar la aplicación
   async unmount(props) {
     console.log("App-desmontado", props);
+    const contenedor = document.getElementById("app");
+    contenedor.innerHTML = "";
   }
 };
 
