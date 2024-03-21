@@ -20,10 +20,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    /* new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: 'index.html',
-    }),
+    }), */
   ],
   devServer: {
     historyApiFallback: true,
