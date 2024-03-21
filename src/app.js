@@ -10,6 +10,10 @@ const app = {
   // método obligatorio para montar la aplicación
   async mount(props) {
     console.log("App-montada:", props);
+    const contenedor = document.getElementById("app");
+    const boton = document.createElement("button");
+    boton.textContent = `Guardar ${props.nombre}`;
+    contenedor.appendChild(boton);
   },
 
   // método obligatorio para desmontar la aplicación
