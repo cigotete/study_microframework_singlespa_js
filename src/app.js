@@ -20,3 +20,5 @@ const app = {
 };
 
 export const { bootstrap, mount, unmount } = app;
+
+export const square = (number) => number * number;
