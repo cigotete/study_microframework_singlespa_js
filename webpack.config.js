@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
   entry: './src/app.js',
@@ -7,6 +7,7 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    libraryTarget: 'system',
   },
   module: {
     rules: [
@@ -20,13 +21,14 @@ module.exports = {
     ],
   },
   plugins: [
-    /* new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html',
-    }), */
+
   ],
+  externals: ["single-spa"],
   devServer: {
     historyApiFallback: true,
     port: 9001,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
 };
